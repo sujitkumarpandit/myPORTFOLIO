@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'JetBrains Mono', monospace;
+  --font-body: 'JetBrains Mono', monospace;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --color-light-bg: #F5F3EE;
+  --color-light-surface: #FCFBF8;
+  --color-light-text: #111111;
+  --color-light-sec: #66635D;
+  --color-light-border: #D7D3CA;
+  --color-light-accent: #FF4D00;
+
+  --color-dark-bg: #101010;
+  --color-dark-surface: #171717;
+  --color-dark-text: #F4F1EA;
+  --color-dark-sec: #9C9992;
+  --color-dark-border: #292929;
+  --color-dark-accent: #FF5A1F;
+}
+
+@layer base {
+  :root {
+    --bg: var(--color-light-bg);
+    --surface: var(--color-light-surface);
+    --text-primary: var(--color-light-text);
+    --text-secondary: var(--color-light-sec);
+    --border: var(--color-light-border);
+    --accent: var(--color-light-accent);
+    --grid-size: 24px;
+    --grid-color: rgba(0, 0, 0, 0.07);
+  }
+  
+  .dark {
+    --bg: var(--color-dark-bg);
+    --surface: var(--color-dark-surface);
+    --text-primary: var(--color-dark-text);
+    --text-secondary: var(--color-dark-sec);
+    --border: var(--color-dark-border);
+    --accent: var(--color-dark-accent);
+    --grid-size: 24px;
+    --grid-color: rgba(255, 255, 255, 0.07);
+  }
+}
+
+.global-bg-grid {
+  background-size: var(--grid-size) var(--grid-size);
+  background-image:
+    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+  background-position: top left;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+  letter-spacing: 0.05em;
+}
+
+/* Terminal & Developer Styling Utilities */
+.caret-blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+* {
+  border-color: var(--border);
+}
+
+::selection {
+  background-color: var(--accent);
+  color: #FFFFFF;
+}
+
+/* Scrollbar styling for a premium feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 0px; /* Square off scrollbar for terminal feel */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Mobile & Touch Utilities */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Fixed & Sticky Sidebar with Independent Scrolling */
+.sidebar-sticky {
+  position: sticky;
+  top: 4.5rem;
+  max-height: calc(100vh - 5.5rem);
+  overflow-y: auto;
+  z-index: 20;
+}
+
+.tap-highlight-transparent {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.safe-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Touch targets optimization */
+@media (max-width: 768px) {
+  button, a, input, select, textarea {
+    touch-action: manipulation;
+  }
+}

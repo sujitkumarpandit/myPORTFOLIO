@@ -1,0 +1,6 @@
+{
+  "name": "Professional Portfolio",
+  "description": "A premium, editorial-style personal portfolio and professional platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
