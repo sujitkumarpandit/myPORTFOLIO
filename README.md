@@ -1,20 +1,68 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# myPORTFOLIO
 
-# Run and deploy your AI Studio app
+A personal portfolio website showcasing my projects, skills, experience, and work.
 
-This contains everything you need to run your app locally.
+## 🚀 Getting Started
 
-View your app in AI Studio: https://ai.studio/apps/69b62f26-4ddb-4b9a-90be-ad6d3ccb133e
+### Prerequisites
 
-## Run Locally
+Make sure you have **Node.js** installed on your computer.
 
-**Prerequisites:**  Node.js
+### Installation
 
+1. Clone the repository:
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```bash
+git clone https://github.com/sujitkumarpandit/myPORTFOLIO.git
+```
+
+2. Move into the project directory:
+
+```bash
+cd myPORTFOLIO
+```
+
+3. Install the dependencies:
+
+```bash
+npm install
+```
+
+### Environment Variables
+
+If the project uses Gemini or other API services, create a `.env.local` file in the project root and add the required environment variables.
+
+For example:
+
+```env
+GEMINI_API_KEY=your_api_key_here
+```
+
+**Never commit your actual API key to GitHub.**
+
+### Run Locally
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Then open the local URL shown in your terminal.
+
+## 🛠️ Technologies
+
+* React
+* JavaScript / TypeScript
+* Vite
+* Supabase
+* Gemini API
+* CSS / Tailwind CSS
+
+## 📦 Deployment
+
+This project can be deployed using Cloudflare Pages.
+
+## 📄 License
+
+This project is for personal portfolio purposes.
